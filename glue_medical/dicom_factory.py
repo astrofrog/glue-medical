@@ -121,7 +121,7 @@ def dicom_reader(source):
             # scan will start at the top of e.g. the body and move downwards.
             array = array[::-1]
 
-            return Data(array=array, label=os.path.basename(source))
+            return [Data(array=array, label=os.path.basename(source))]
 
         # If we are here, the shapes of the DICOM files didn't match, so we
         # simply return one Data object per DICOM file.
